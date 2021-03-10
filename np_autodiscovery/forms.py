@@ -28,6 +28,7 @@ class DiscoveryRequestFilterForm(BootstrapMixin, forms.Form):
     platform = DynamicModelMultipleChoiceField(
         queryset=Platform.objects.all(),
         to_field_name='slug',
+        required=False,
         widget=APISelectMultiple(
             api_url="/api/dcim/platforms/",
             value_field="slug",
@@ -36,6 +37,7 @@ class DiscoveryRequestFilterForm(BootstrapMixin, forms.Form):
     site = DynamicModelMultipleChoiceField(
         queryset=Site.objects.all(),
         to_field_name='slug',
+        required=False,
         widget=APISelectMultiple(
             api_url="/api/dcim/sites/",
             value_field="slug",
@@ -44,6 +46,7 @@ class DiscoveryRequestFilterForm(BootstrapMixin, forms.Form):
     device_role = DynamicModelMultipleChoiceField(
         queryset=DeviceRole.objects.all(),
         to_field_name='slug',
+        required=False,
         widget=APISelectMultiple(
             api_url="/api/dcim/device-roles/",
             value_field="slug",
