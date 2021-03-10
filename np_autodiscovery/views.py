@@ -2,7 +2,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import View
 
-from utilities.views import ObjectDeleteView, ObjectEditView, ObjectListView
+from netbox.views.generic import ObjectDeleteView, ObjectEditView, ObjectListView
 
 from np_autodiscovery import filters, forms, tables
 from np_autodiscovery.models import DiscoveryRequest
