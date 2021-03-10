@@ -2,7 +2,7 @@ from django import forms
 
 from dcim.models import DeviceRole, Platform, Site
 from utilities.forms import (
-    add_blank_choice, APISelect, APISelectMultiple, BootstrapMixin, FilterChoiceField, StaticSelect2
+    add_blank_choice, APISelect, APISelectMultiple, BootstrapMixin, DynamicModelMultipleChoiceField, StaticSelect2
 )
 
 from np_autodiscovery.constants import REQUEST_NAPALM_DRIVER_CHOICES, REQUEST_STATUS_CHOICES
@@ -25,7 +25,7 @@ class DiscoveryRequestFilterForm(BootstrapMixin, forms.Form):
         required=False,
         widget=StaticSelect2()
     )
-    platform = FilterChoiceField(
+    platform = DynamicModelMultipleChoiceField(
         queryset=Platform.objects.all(),
         to_field_name='slug',
         widget=APISelectMultiple(
@@ -33,7 +33,7 @@ class DiscoveryRequestFilterForm(BootstrapMixin, forms.Form):
             value_field="slug",
         )
     )
-    site = FilterChoiceField(
+    site = DynamicModelMultipleChoiceField(
         queryset=Site.objects.all(),
         to_field_name='slug',
         widget=APISelectMultiple(
@@ -41,7 +41,7 @@ class DiscoveryRequestFilterForm(BootstrapMixin, forms.Form):
             value_field="slug",
         )
     )
-    device_role = FilterChoiceField(
+    device_role = DynamicModelMultipleChoiceField(
         queryset=DeviceRole.objects.all(),
         to_field_name='slug',
         widget=APISelectMultiple(
