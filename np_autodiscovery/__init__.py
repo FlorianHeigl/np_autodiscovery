@@ -7,7 +7,7 @@ class NpAutodiscoveryConfig(PluginConfig):
     name = 'np_autodiscovery'
     verbose_name = 'Autodiscovery'
     description = 'auto discovery of existing devices in a network'
-    version = 1.0.2
+    version = '1.0.3'
     author='John Anderson',
     author_email='lampwins@gmail.com',
     required_settings = []
