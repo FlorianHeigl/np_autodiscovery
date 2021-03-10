@@ -1,7 +1,7 @@
 from django import forms
 
 from dcim.models import DeviceRole, Platform, Site
-from utilities.choices import (
+from utilities.forms import (
     add_blank_choice, APISelect, APISelectMultiple, BootstrapMixin, FilterChoiceField, StaticSelect2
 )
 
