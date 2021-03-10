@@ -5,7 +5,7 @@ from rq import cancel_job
 
 from dcim.models import Device, DeviceRole, Platform, Site
 from ipam.fields import IPAddressField, IPNetworkField
-from utilities.models import ChangeLoggedModel
+from extras.models import ChangeLoggedModel
 
 from np_autodiscovery.constants import *
 
